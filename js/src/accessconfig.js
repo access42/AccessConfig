@@ -307,7 +307,45 @@ var AccessConfig = (function() {
 				en: 'Replace with text',
 				fr: 'Remplacer par du texte'
 			}		
-		},	
+		},
+		/** 
+		Animation 
+		**/
+
+		AnimationFieldset: {
+			//caution : don't change
+			id: 'animation'
+		},
+		AnimationLegend: {
+			//label
+			lang: {
+				en: 'Animation',
+				fr: 'Animation'
+			}		
+		},
+		DefaultAnimationCheckbox:{
+			id: 'default-animation',
+			value: 'default-animation',
+			//caution : don't change
+			groupName: 'animation',
+			//label
+			lang: {
+				en: 'Default',
+				fr: 'Défaut'
+			}		
+		},
+		NoAnimationCheckbox:{
+			id: 'cancel-animation',
+			value: 'cancel-animation',
+			//caution : don't change
+			groupName: 'animation',
+			//label
+			lang: {
+				en: 'Remove',
+				fr: 'Supprimer'
+			}		
+		}
+
 	}
 	//global
 	var global = {
@@ -315,7 +353,8 @@ var AccessConfig = (function() {
 		cookieName: null,
 		openObj: null,
 		imgTab : null,
-		imgSpan: null
+		imgSpan: null,
+		onAnimationChange: null
 	}
 
 	/** Onload */
@@ -386,6 +425,20 @@ var AccessConfig = (function() {
 				setImgtab();
 				setEvent();
 			}
+			// Animation feature
+			if(global.userParams.Animation != false){
+				global.mode = userPrefix+'-'+config.AnimationFieldset.id;
+				global.cookieName = 'animation';
+				if (global.userParams.onAnimationChange != false) {
+					var fcn = window[global.userParams.onAnimationChange];
+					if (typeof fcn === "function") {
+						global.onAnimationChange = fcn;
+					} else {
+						console.log('AccessConfig warning : onAnimationChange callback function not found');
+					}
+				}
+				setEvent();
+			}			
 
 		}
 	}
@@ -597,6 +650,35 @@ var AccessConfig = (function() {
 			fieldsetContent.appendChild( fieldset );
 		}
 
+		/**
+		Animation feature
+		**/
+
+		if(global.userParams.Animation != false){
+			var fieldset = $create({tagName:'fieldset', id:userPrefix+'-'+config.AnimationFieldset.id});
+			var legend = document.createElement( 'legend' );
+			var legendText = document.createTextNode( config.AnimationLegend.lang[ langRef ] );
+			legend.appendChild( legendText );
+			fieldset.appendChild( legend );
+
+			/**Default option**/
+			var CInput = $create({tagName:'input', type:'radio',checked:'checked', id:userPrefix+'-'+config.DefaultAnimationCheckbox.id, value:userPrefix+'-'+config.DefaultAnimationCheckbox.value, name:userPrefix+'-'+config.DefaultAnimationCheckbox.groupName});
+			var CLabel = $create({tagName:'label', for:userPrefix+'-'+config.DefaultAnimationCheckbox.id});
+			var defaultCText = document.createTextNode ( config.DefaultAnimationCheckbox.lang[ langRef ] );
+			CLabel.appendChild( defaultCText );
+			fieldset.appendChild( CInput );
+			fieldset.appendChild( CLabel );
+
+			/**Alternative option : kill animation**/
+			var CInput = $create({tagName:'input', type:'radio',id:userPrefix+'-'+config.NoAnimationCheckbox.id, value:userPrefix+'-'+config.NoAnimationCheckbox.value, name:userPrefix+'-'+config.NoAnimationCheckbox.groupName});
+			var CLabel = $create({tagName:'label', for:userPrefix+'-'+config.NoAnimationCheckbox.id});
+			var defaultCText = document.createTextNode ( config.NoAnimationCheckbox.lang[ langRef ] );
+			CLabel.appendChild( defaultCText );
+			fieldset.appendChild( CInput );
+			fieldset.appendChild( CLabel );
+			fieldsetContent.appendChild( fieldset );
+		}		
+
 		/**Set generic class attributes on fieldset, legend and radio**/
 
 		allFieldset = div.querySelectorAll( 'fieldset' );
@@ -684,9 +766,17 @@ var AccessConfig = (function() {
 		var newClass = obj.getAttribute( 'value' );
 		obj.setAttribute( 'checked', 'checked' );
 		var value = obj.getAttribute( 'value' );
-			if( value === userPrefix+'-'+config.ImageReplacementCheckbox.value){
-				replaceImg();
-			}	
+		if( value === userPrefix+'-'+config.ImageReplacementCheckbox.value){
+			replaceImg();
+		} else if (value === userPrefix+'-'+config.DefaultAnimationCheckbox.value){
+			if (global.onAnimationChange !== null) {
+				global.onAnimationChange("enabled");
+			}
+		} else if (value === userPrefix+'-'+config.NoAnimationCheckbox.value){
+			if (global.onAnimationChange !== null) {
+				global.onAnimationChange("disabled");
+			}
+		}
 		body.classList.add( newClass );
 		createCookie(global.cookieName, newClass,'180');
 	}
