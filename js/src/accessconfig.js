@@ -319,8 +319,8 @@ var AccessConfig = (function() {
 		AnimationLegend: {
 			//label
 			lang: {
-				en: 'Animation',
-				fr: 'Animation'
+				en: 'Animations',
+				fr: 'Animations'
 			}		
 		},
 		DefaultAnimationCheckbox:{
