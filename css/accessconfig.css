@@ -115,10 +115,10 @@
  */
 #a42-ac-close {
 	position: absolute;
-	top: 1.5rem;
+	top: .625rem;
 	right: 1.5rem;
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 2.75rem;
+	height: 2.75rem;
 	cursor: pointer;
 	border: 0;
 }
@@ -132,11 +132,10 @@
 	content: '';
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 0;
 	display: block;
-	margin-left: -.75rem;
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 100%;
+	height: 100%;
 	background: url('data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjQgNC4yLTQuMS00LjFoLS4xbC03LjggNy43LTcuOC03LjhoLS4xbC00LjEgNC4xIDcuOSA3LjktNy45IDcuOCA0LjEgNC4yaC4xbDcuOC03LjggNy44IDcuN2MwIC4xIDAgLjEuMSAwbDQuMS00LjEtNy44LTcuOHoiIGZpbGw9IiMzMTQ4NmUiLz48L3N2Zz4=') no-repeat 50% 50%;
 }
 
@@ -147,6 +146,13 @@
 	opacity: .6;
 	background-color: transparent !important;
 }
+
+	@media screen and (max-width: 29.9em) { 
+		
+		#a42-ac-close {
+			right: .75rem;
+		}
+	}
 
 
 /**
@@ -214,7 +220,7 @@
 /* Then, AccessConfig custom styles */
 #a42-ac fieldset {
 	margin: 1em 0 0 0;
-	padding: 1em .5em 1em 1em;
+	padding: 1em .5em .5em 1em;
 	border-width: 0 0 0 .625em;
 	border-style: solid;
 
@@ -260,7 +266,6 @@
 	float: left;
 	width: 100%;
 	margin: 0;
-	padding-bottom: .364em;
 	font-weight: bold;
 	font-size: 1.375em;
 
@@ -301,8 +306,16 @@
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 0;
-	padding-left: 2.267em;
+	padding: .625rem 0 .625rem 2.267em;
 }
+
+	@media screen and (max-width: 29.9em) { 
+
+		#a42-ac input[type="radio"] + label {
+			padding-top: .786em;
+			padding-bottom: .786em;
+		}
+	}
 
 #a42-ac input[type="radio"] + label::after,
 #a42-ac input[type="radio"] + label::before {
@@ -314,7 +327,7 @@
 
 #a42-ac input[type="radio"] + label::after
 {
-	top: .33334em; /* 5px */
+	top: .98em; /* 5px + 10px */
 	left: .33334em; /* 5px */
 	width: .933em; /* 14px */
 	height: .933em; /* 14px */
@@ -325,7 +338,7 @@
 }
 
 #a42-ac input[type="radio"] + label::before {
-	top: 0;
+	top: .625rem;
 	left: 0;
 	width: 1.6em; /* 24px */
 	height: 1.6em; /* 24px */
@@ -333,14 +346,18 @@
 	border-style: solid;
 
 	/* Access42 colors */
-	border-color: #a0b0bd;
+	border-color: #7d829a;
 	background-color: #f9fcff;
 }
 
 	@media screen and (max-width: 29.9em) { 
 
+		#a42-ac label{
+			font-size: 1em;
+		}
+
 		#a42-ac input[type="radio"] + label::after {
-			top: .357em;
+			top: 1.071em;
 			left: .357em;
 			width: 1em;
 			height: 1em;
