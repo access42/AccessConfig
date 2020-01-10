@@ -516,6 +516,7 @@ body.a42-ac-active {
 .a42-ac-high-contrast *{
 	background-color: #343643 !important;
 	color: white !important;
+	text-decoration-color: currentColor !important; /* #125 */
 }
 
 .a42-ac-high-contrast,
@@ -626,6 +627,7 @@ body.a42-ac-active {
 .a42-ac-inv-contrast *{
 	background-color: #000080 !important;
 	color: #FFFF00 !important;
+	text-decoration-color: currentColor !important; /* #125 */
 }
 
 .a42-ac-inv-contrast,
