@@ -742,7 +742,7 @@ body.a42-ac-active {
 }
 
 body.a42-ac-dys-font,
-body.a42-ac-dys-font *{
+body.a42-ac-dys-font *:not(i):not(.fa):not(.icon) {
 	font-family: 'opendys' !important;
 }
 
