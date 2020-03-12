@@ -327,7 +327,7 @@
 
 #a42-ac input[type="radio"] + label::after
 {
-	top: .98em; /* 5px + 10px */
+	top: 1em; /* 5px + 10px */
 	left: .33334em; /* 5px */
 	width: .933em; /* 14px */
 	height: .933em; /* 14px */
