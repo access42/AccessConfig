@@ -345,6 +345,12 @@ var AccessConfig = (function() {
 				modalButtonTextSpan.appendChild(modalButtonText);
 				modalButton.appendChild(modalButtonTextSpan);
 
+				if(document.querySelector( '[data-accessconfig-buttontitle]' )){
+					if((document.querySelector( '[data-accessconfig-buttonname]' ).getAttribute( 'data-accessconfig-buttontitle' ))!=""){
+							modalButton.setAttribute('title',document.querySelector( '[data-accessconfig-buttonname]' ).getAttribute( 'data-accessconfig-buttontitle' ));
+					}
+				}
+
 				var setup = document.getElementById(config.Setup.id);
 				setup.appendChild(modalButton);
 
