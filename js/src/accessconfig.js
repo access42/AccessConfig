@@ -339,9 +339,11 @@ var AccessConfig = (function() {
 				modalButton.setAttribute( 'id', userPrefix+'-'+config.ModalButton.id );
 				modalButton.setAttribute( 'data-accessconfig-button','true' ); 
 
-				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );		
+				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );						
+				var modalButtonTextSpan = document.createElement('span');
 				var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
-				modalButton.appendChild(modalButtonText);
+				modalButtonTextSpan.appendChild(modalButtonText);
+				modalButton.appendChild(modalButtonTextSpan);
 
 				var setup = document.getElementById(config.Setup.id);
 				setup.appendChild(modalButton);
