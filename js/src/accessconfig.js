@@ -342,8 +342,14 @@ var AccessConfig = (function() {
 				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );						
 				var modalButtonTextSpan = document.createElement('span');
 				var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
-				modalButtonTextSpan.appendChild(modalButtonText);
-				modalButton.appendChild(modalButtonTextSpan);
+
+				if(document.querySelector( '[id="accessconfig-buttonname-extension"]' )&&(document.querySelector( '[id="accessconfig-buttonname-extension"]' ).innerHTML!= "")){
+					var modalButtonText=document.querySelector( '[id="accessconfig-buttonname-extension"]' );
+				modalButton.appendChild(modalButtonText);
+				}else{
+					modalButtonTextSpan.appendChild(modalButtonText);
+					modalButton.appendChild(modalButtonTextSpan);
+				}
 
 				if(document.querySelector( '[data-accessconfig-buttontitle]' )){
 					if((document.querySelector( '[data-accessconfig-buttonname]' ).getAttribute( 'data-accessconfig-buttontitle' ))!=""){
