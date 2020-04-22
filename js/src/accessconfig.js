@@ -339,21 +339,22 @@ var AccessConfig = (function() {
 				modalButton.setAttribute( 'id', userPrefix+'-'+config.ModalButton.id );
 				modalButton.setAttribute( 'data-accessconfig-button','true' ); 
 
-				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );						
-				var modalButtonTextSpan = document.createElement('span');
-				var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
-
-				if(document.querySelector( '[id="accessconfig-buttonname-extension"]' )&&(document.querySelector( '[id="accessconfig-buttonname-extension"]' ).innerHTML!= "")){
-					var modalButtonText=document.querySelector( '[id="accessconfig-buttonname-extension"]' );
-				modalButton.appendChild(modalButtonText);
-				}else{
+				if(document.querySelector( '[data-accessconfig-buttonname]' )){
+					var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );
+					var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
+					var modalButtonTextSpan = document.createElement('span');
 					modalButtonTextSpan.appendChild(modalButtonText);
 					modalButton.appendChild(modalButtonTextSpan);
 				}
 
+				if(document.querySelector( '[id="accessconfig-buttonname-extension"]' )&&(document.querySelector( '[id="accessconfig-buttonname-extension"]' ).innerHTML!= "")){
+					var modalButtonText=document.querySelector( '[id="accessconfig-buttonname-extension"]' );
+				modalButton.appendChild(modalButtonText);
+				}
+
 				if(document.querySelector( '[data-accessconfig-buttontitle]' )){
-					if((document.querySelector( '[data-accessconfig-buttonname]' ).getAttribute( 'data-accessconfig-buttontitle' ))!=""){
-							modalButton.setAttribute('title',document.querySelector( '[data-accessconfig-buttonname]' ).getAttribute( 'data-accessconfig-buttontitle' ));
+					if((document.querySelector( '[data-accessconfig-buttontitle]' ).getAttribute( 'data-accessconfig-buttontitle' ))!=""){
+							modalButton.setAttribute('title',document.querySelector( '[data-accessconfig-buttontitle]' ).getAttribute( 'data-accessconfig-buttontitle' ));
 					}
 				}
 
