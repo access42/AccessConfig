@@ -89,7 +89,7 @@ Vous pouvez également configurer les paramètres suivants :
 *   `FormFieldsetLegend` : la valeur de la classe des éléments `legend` à l’intérieur de la fenêtre modale ;
 *   `FormRadio` : la valeur de la classe des `input[type="radio"]` à l’intérieur de la fenêtre modale.
 
-##### Ajout d’un attribut title sur le bouton
+##### Ajout d’un attribut `title` sur le bouton
 
 Il est possible d’ajouter un attribut `title` sur le bouton déclenchant l’apparition de la fenêtre modale.
 
@@ -103,14 +103,14 @@ Par exemple :
 
 Par défaut, le nom du bouton est généré formé grâce à la propriété `data-accessconfig-buttonname`.
 
-Mais il est possible de remplacer ou de compléter ce nom avec du HTML.
+Mais il est possible de remplacer ce nom avec du HTML.
 
 Ainsi, si l’élément `div#accessconfig` contient un élément `span#accessconfig-buttonname-extension`, c’est le contenu de ce dernier qui sera utilisé pour créer le nom du bouton.
 
 Par exemple :
 
 ```<div id="accessconfig" data-accessconfig-buttonname="Paramètres d’accessibilité" data-accessconfig-buttontitle="Un title" data-accessconfig-params='{ "ContainerClass" : "","ModalCloseButton" :  "","ModalTitle" : "","FormFieldset" : "","FormFieldsetLegend" : "","FormRadio" : ""}'>
-    <span id="accessconfig-buttonname-extension">[Intitulé supplémentaire pouvant contenir du HTML]</span>
+    <span id="accessconfig-buttonname-extension">[Intitulé pouvant contenir du HTML]</span>
 </div>
 ```
 
