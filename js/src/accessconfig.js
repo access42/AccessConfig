@@ -339,7 +339,7 @@ var AccessConfig = (function() {
 				modalButton.setAttribute( 'id', userPrefix+'-'+config.ModalButton.id );
 				modalButton.setAttribute( 'data-accessconfig-button','true' ); 
 
-				if(document.querySelector( '[data-accessconfig-buttonname]' )){
+				if(document.querySelector( '[data-accessconfig-buttonname]' ) && !document.querySelector( '[id="accessconfig-buttonname-extension"]' )){
 					var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );
 					var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
 					var modalButtonTextSpan = document.createElement('span');
@@ -347,9 +347,9 @@ var AccessConfig = (function() {
 					modalButton.appendChild(modalButtonTextSpan);
 				}
 
-				if(document.querySelector( '[id="accessconfig-buttonname-extension"]' )&&(document.querySelector( '[id="accessconfig-buttonname-extension"]' ).innerHTML!= "")){
+				else if(document.querySelector( '[id="accessconfig-buttonname-extension"]' )&&(document.querySelector( '[id="accessconfig-buttonname-extension"]' ).innerHTML!= "")){
 					var modalButtonText=document.querySelector( '[id="accessconfig-buttonname-extension"]' );
-				modalButton.appendChild(modalButtonText);
+					modalButton.appendChild(modalButtonText);
 				}
 
 				if(document.querySelector( '[data-accessconfig-buttontitle]' )){
