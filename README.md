@@ -101,7 +101,7 @@ Par exemple :
 
 ##### Ajout de contenu HTML à l’intérieur du bouton
 
-Par défaut, le nom du bouton est généré formé grâce à la propriété `data-accessconfig-buttonname`.
+Par défaut, le nom du bouton est généré grâce à la propriété `data-accessconfig-buttonname`.
 
 Mais il est possible de remplacer ce nom avec du HTML.
 
