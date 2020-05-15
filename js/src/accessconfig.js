@@ -62,6 +62,7 @@ var AccessConfig = (function() {
 			titleLang: {
 				en: 'Accessibility setting',
 				fr: 'Paramètres d’accessibilité',
+				es: 'Configuraciones de accesibilidad'
 			},
 			titleId: 'title',
 			titleClass: 'title',
@@ -71,7 +72,8 @@ var AccessConfig = (function() {
 			classSetting: 'close',
 			lang: {
 				en: 'close',
-				fr: 'fermer'
+				fr: 'fermer',
+				es: 'cerrar'
 			},
 			hiddenTextClass: 'sr-only'
 		},
@@ -114,7 +116,8 @@ var AccessConfig = (function() {
 		ContrastLegend: {
 			lang: {
 				en: 'Contrast',
-				fr: 'Contrastes'
+				fr: 'Contrastes',
+				es: 'Contrastes'
 			}	
 		},
 		DefaultContrastCheckbox: {
@@ -125,7 +128,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Default',
-				fr: 'Défaut'
+				fr: 'Défaut',
+				es: 'Por defecto'
 			}
 		},
 		HighContrastCheckbox:{
@@ -136,7 +140,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Reinforce',
-				fr: 'Renforcer'
+				fr: 'Renforcer',
+				es: 'Fortalecer'				
 			}
 		},
 		InvertContrastCheckbox:{
@@ -147,7 +152,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Reverse',
-				fr: 'Inverser'
+				fr: 'Inverser',
+				es: 'Reversa'
 			}		
 		},
 		
@@ -163,7 +169,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Font (dyslexia)',
-				fr: 'Police (dyslexie)'
+				fr: 'Police (dyslexie)',
+				es: 'Fuente (dislexia)'
 			}		
 		},
 		DefaultFontCheckbox:{
@@ -174,7 +181,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Default',
-				fr: 'Défaut'
+				fr: 'Défaut',
+				es: 'Por defecto'
 			}		
 		},
 		DyslexiaFontCheckbox:{
@@ -185,7 +193,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Adapt',
-				fr: 'Adapter'
+				fr: 'Adapter',
+				es: 'En forma'
 			}		
 		},
 
@@ -201,7 +210,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Line spacing',
-				fr: 'Interlignage'
+				fr: 'Interlignage',
+				es: 'Interlineado'
 			}		
 		},
 		DefaultLineSpacingCheckbox:{
@@ -212,7 +222,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Default',
-				fr: 'Défaut'
+				fr: 'Défaut',
+				es: 'Por defecto'
 			}		
 		},
 		DyslexiaLineSpacingCheckbox:{
@@ -223,7 +234,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Increase',
-				fr: 'Augmenter'
+				fr: 'Augmenter',
+				es: 'Aumentar'
 			}		
 		},
 	
@@ -239,7 +251,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Justification',
-				fr: 'Justification'
+				fr: 'Justification',
+				es: 'Justificación'
 			}		
 		},
 		DefaultJustificationCheckbox:{
@@ -250,7 +263,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Default',
-				fr: 'Défaut'
+				fr: 'Défaut',
+				es: 'Por defecto'
 			}		
 		},
 		DyslexiaJustificationCheckbox:{
@@ -261,7 +275,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Remove',
-				fr: 'Supprimer'
+				fr: 'Supprimer',
+				es: 'Eliminar'
 			}		
 		},
 		
@@ -283,7 +298,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Images',
-				fr: 'Images'
+				fr: 'Images',
+				es: 'Imágenes'
 			}		
 		},
 		DefaultImageReplacementCheckbox:{
@@ -294,7 +310,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Default',
-				fr: 'Défaut'
+				fr: 'Défaut',
+				es: 'Por defecto'
 			}		
 		},
 		ImageReplacementCheckbox:{
@@ -305,7 +322,8 @@ var AccessConfig = (function() {
 			//label
 			lang: {
 				en: 'Replace with text',
-				fr: 'Remplacer par du texte'
+				fr: 'Remplacer par du texte',
+				es: 'Reemplazar con texto'
 			}		
 		},	
 	}
