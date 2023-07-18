@@ -1,6 +1,8 @@
 AccessConfig
 ============
 
+**Avertissement – 18/07/2023 : AccessConfig est en pause, car il a besoin d’évolutions techniques que nous ne sommes pas en mesure de réaliser pour l’instant. Merci pour votre compréhension !**
+
 Un sélecteur de styles, simple et open source, pour permettre aux personnes en situation de handicap d’adapter votre site à leurs besoins.
 
 [Contribuer sur GitHub](https://github.com/access42/AccessConfig) et [découvrez nos autres outils](https://access42.net/outils).
