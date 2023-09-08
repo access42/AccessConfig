@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/accessconfig.css" type="text/css" media="screen" />
+	<script src="https://cdn.jsdelivr.net/npm/libgif@0.0.3/libgif.min.js"></script>
+	<script src="js/src/accessconfig.js" type="text/javascript"></script>
+	<meta charset="UTF-8">
+
+</head>
+<body>
+<div id="accessconfig" data-accessconfig-buttonname="Accessibility parameters" data-accessconfig-params='{ "Prefix" : "a42-ac", "ContainerClass" : "","ModalCloseButton" : "","ModalTitle" : "","FormFieldset" : "","FormFieldsetLegend" : "","FormRadio" : "", "Animation": true, "onAnimationChange": "onAnimationChange"}' ></div>
+
+
+<img src="https://media.giphy.com/media/Byana3FscAMGQ/giphy.gif" id="anim" alt="cat drinking from the faucet" />
+	<script>
+		// get the default status from the cookie
+		var canAnimate = (document.cookie.match("a42-ac-animation=a42-ac-cancel-animation") === null);
+		var supergif = new SuperGif({
+			gif: document.getElementById("anim"),
+			auto_play: canAnimate,
+		});
+		supergif.load(function(){
+			console.log('gif loaded');
+			var el = document.querySelector('.jsgif canvas');
+			el.setAttribute('aria-label', 'cat drinking from the faucet');
+			el.setAttribute('role', 'img');
+		});
+
+		// callback function to manage the changes of the status
+		window.onAnimationChange = function(e) {
+		console.log("animation "+e);
+		if (e == "enabled") {
+			supergif.play();
+		} else {
+			supergif.pause();
+		}
+	}
+	</script>
+</body>
+</html>

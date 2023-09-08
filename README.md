@@ -33,6 +33,9 @@ Le script insère, à l’intérieur de l’attribut `class` de la balise `body`
     *   Défaut : `.a42-ac-default-img`
     *   Adaptée : `.a42-ac-text-img`
     *   Note : le remplacement s’effectue par un traitement JavaScript.
+*   **Animation**
+    *   Défaut : `.a42-ac-default-animation`
+    *   Adapté : `.a42-ac-cancel-animation`    
 
 Installation
 ------------
@@ -89,4 +92,5 @@ Vous pouvez également configurer les paramètres suivants :
 *   `ModalTitle` : la valeur de la classe du titre de la fenêtre modale ;
 *   `FormFieldset` : la valeur de la classe des éléments `fieldset` à l’intérieur de la fenêtre modale ;
 *   `FormFieldsetLegend` : la valeur de la classe des éléments `legend` à l’intérieur de la fenêtre modale ;
-*   `FormRadio` : la valeur de la classe des `input[type="radio"]` à l’intérieur de la fenêtre modale.
+*   `FormRadio` : la valeur de la classe des `input[type="radio"]` à l’intérieur de la fenêtre modale;
+*   `onAnimationChange`: nom d'une fonction de callback appelée au changement d'état du bouton radio d'animation, celle-ci reçoit un paramètre qui peut avoir pour valeur "enabled" ou "disabled".
